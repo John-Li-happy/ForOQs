@@ -7,14 +7,40 @@
 //
 
 import UIKit
+//import ObjectiveC
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        createOQ()
     }
+    
+    func createOQ()
+    {
+        let blockO = BlockOperation
+        {
+            var result = 0
+            
+            for counter in 1...1000
+            {
+                result += counter
+            }
+        }
+        
+        let queue = OperationQueue()
+        queue.qualityOfService = .background
+//        queue.p
+        
+        queue.addOperation(blockO)
+        
+        
+    }
+}
 
-
+extension MainViewController: NSObject
+{
 }
 
